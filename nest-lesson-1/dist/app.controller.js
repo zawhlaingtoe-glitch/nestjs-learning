@@ -20,16 +20,16 @@ let AppController = class AppController {
         return this.appService.getHello();
     }
     getHome() {
-        return "Home";
+        return 'Home';
     }
     getAbout() {
-        return "About";
+        return 'About';
     }
     getUserlist() {
-        return ["Aye", "Zaw", "David"];
+        return ['Aye', 'Zaw', 'David'];
     }
     getObject() {
-        return { id: "1", name: "David" };
+        return { id: '1', name: 'David' };
     }
 };
 exports.AppController = AppController;
@@ -40,25 +40,25 @@ __decorate([
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHello", null);
 __decorate([
-    (0, common_1.Get)("/home"),
+    (0, common_1.Get)('/home'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getHome", null);
 __decorate([
-    (0, common_1.Get)("about"),
+    (0, common_1.Get)('about'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
 ], AppController.prototype, "getAbout", null);
 __decorate([
-    (0, common_1.Get)("/userlists"),
+    (0, common_1.Get)('/userlists'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Array)
 ], AppController.prototype, "getUserlist", null);
 __decorate([
-    (0, common_1.Get)("/object"),
+    (0, common_1.Get)('/object'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Object)
