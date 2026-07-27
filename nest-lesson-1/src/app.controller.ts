@@ -10,20 +10,20 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get("/home")
+  @Get('/home')
   getHome(): string {
-    return  "Home"
+    return 'Home';
   }
-  @Get("about")
+  @Get('about')
   getAbout(): string {
-    return "About"
+    return 'About';
   }
-  @Get("/userlists")
+  @Get('/userlists')
   getUserlist(): string[] {
-    return ["Aye","Zaw","David"]
+    return ['Aye', 'Zaw', 'David'];
   }
-  @Get("/object")
-  getObject(): object{
-    return {id: "1",name: "David"}
+  @Get('/object')
+  getObject(): object {
+    return { id: '1', name: 'David' };
   }
 }
