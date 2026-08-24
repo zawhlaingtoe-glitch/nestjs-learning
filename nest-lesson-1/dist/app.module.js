@@ -13,6 +13,8 @@ const app_service_1 = require("./app.service");
 const cats_module_1 = require("./cats/cats.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const users_module_1 = require("./users/users.module");
+const profile_module_1 = require("./profile/profile.module");
+const posts_module_1 = require("./posts/posts.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -31,6 +33,8 @@ exports.AppModule = AppModule = __decorate([
                 synchronize: true, // false in production
             }),
             users_module_1.UsersModule,
+            profile_module_1.ProfileModule,
+            posts_module_1.PostsModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

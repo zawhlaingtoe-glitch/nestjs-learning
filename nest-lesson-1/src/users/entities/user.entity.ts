@@ -34,7 +34,7 @@ export class User {
   @IsString({ message: "Phone must be string!" })
   phone!: string;
 
-  @OneToOne(() => Profile, (profile) => profile.user, { cascade: true, nullable: true })
+  @OneToOne(() => Profile, (profile) => profile.user, { cascade: true, nullable: true , onDelete: 'CASCADE'})
   @JoinColumn({ name: 'profile_id' })
   profile!: Profile;
 
@@ -55,7 +55,7 @@ export class User {
 
   @BeforeUpdate()
    async hashPasswordOnUpdate(){
-    if (this.password){
+    if (this.password && !this.password.startsWith('2b$')){
       const salt : string = await bcrypt.genSalt();
       this.password = await bcrypt.hash(this.password,salt)
     }

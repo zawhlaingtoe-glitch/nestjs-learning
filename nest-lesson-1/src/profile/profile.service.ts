@@ -24,7 +24,9 @@ export class ProfileService {
 
   // ✅ FIND ALL
   async findAll(): Promise<Profile[]> {
-    return await this.profileRepository.find();
+    return await this.profileRepository.find({
+      relations: {user: true}
+    });
   }
 
   // ✅ FIND ONE
@@ -32,6 +34,7 @@ export class ProfileService {
     try {
       const profile = await this.profileRepository.findOne({
         where: { id },
+        relations: {user: true}
       });
 
       if (!profile) {

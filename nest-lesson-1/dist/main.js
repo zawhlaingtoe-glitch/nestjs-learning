@@ -6,7 +6,7 @@ const common_1 = require("@nestjs/common");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.useGlobalPipes(new common_1.ValidationPipe());
-    const PORT = process.env.PORT || 3001;
+    const PORT = process.env.PORT || 8000;
     const HOST = process.env.HOST || 'localhost';
     await app.listen(PORT, HOST, () => console.log(`Your server is running at http://${HOST}:${PORT}`));
 }
