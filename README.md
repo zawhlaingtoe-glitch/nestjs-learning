@@ -40,12 +40,18 @@ src/
 ├── app.module.ts         # Root module of the application
 ├── app.service.ts        # Business logic provider
 ├── main.ts               # Entry point (bootstrap the Nest application)
-└── users/                # Generated Users CRUD feature module
-    ├── users.module.ts   # Ties the user controller, service, and TypeORM entity together
-    ├── users.controller.ts # Handles /users CRUD routes
-    ├── users.service.ts   # User-related business logic & database repository calls
-    ├── dto/
-    │   ├── create-user.dto.ts # DTO for validating new user creation
-    │   └── update-user.dto.ts # DTO for updating existing users
+├── users/                # Generated Users CRUD feature module
+│   ├── users.module.ts   # Ties the user controller, service, and TypeORM entity together
+│   ├── users.controller.ts # Handles /users CRUD routes
+│   ├── users.service.ts   # User-related business logic & database repository calls
+│   ├── dto/
+│   │   ├── create-user.dto.ts # DTO for validating new user creation
+│   │   └── update-user.dto.ts # DTO for updating existing users
+│   └── entities/
+│       └── user.entity.ts # TypeORM Entity for the users database table
+└── profile/              # Generated Profile feature module linked via One-to-One
+    ├── profile.module.ts
+    ├── profile.controller.ts
+    ├── profile.service.ts
     └── entities/
-        └── user.entity.ts # TypeORM Entity for the users database table
+        └── profile.entity.ts # TypeORM Entity for profiles (One-to-One with User)
